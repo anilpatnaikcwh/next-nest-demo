@@ -1,0 +1,22 @@
+version: "3.9"
+services:
+  postgres:
+    image: postgres
+    container_name: next-nest-demo-db-ct
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: password
+    ports:
+      - 5432:5432
+  pgadmin:
+    image: dpage/pgadmin4
+    container_name: next-nest-demo-db-admin-ct
+    restart: always
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@domain.com
+      PGADMIN_DEFAULT_PASSWORD: password
+      PGADMIN_LISTEN_PORT: 8092
+    ports:
+      - 8092:8092
+    depends_on:
+      - postgres

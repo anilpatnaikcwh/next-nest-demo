@@ -1,0 +1,40 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+node_modules
+.pnp
+.pnp.js
+.yarn/install-state.gz
+
+# Typescript v1 declaration files
+typings
+*.tsbuildinfo
+next-env.d.ts
+
+# testing
+coverage
+
+# next.js
+/.next/
+/out/
+
+# production
+build
+dist
+
+# misc
+.DS_Store
+*.pem
+.vscode
+.env
+.firebase
+.vs
+.hintrc
+
+# logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+firebase-debug.log*
+# Local Netlify folder
+.netlify
