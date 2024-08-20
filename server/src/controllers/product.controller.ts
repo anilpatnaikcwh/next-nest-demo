@@ -3,11 +3,11 @@ import {
   Get,
   Post,
   Body,
-  Patch,
   Param,
   Delete,
   Query,
-  ParseIntPipe
+  ParseIntPipe,
+  Put
 } from "@nestjs/common";
 import { ApiTags } from "@nestjs/swagger";
 import { NavType, TagType } from "../util";
@@ -45,7 +45,7 @@ export class ProductController {
     return await this.productService.createProductAsync(payload);
   }
 
-  @Patch(NavType.Product)
+  @Put(NavType.Product)
   async updateProductAsync(@Body() payload: IProduct) {
     return await this.productService.updateProductAsync(payload);
   }

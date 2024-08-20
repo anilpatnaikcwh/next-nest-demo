@@ -7,9 +7,16 @@
 - Browse database on server folder `npx prisma studio`
 - Start dev server on server folder `npm run dev`
 - Browse [swagger](https://localhost:8091/swagger)
-- Start e2e testing on server folder `npm run test`
+- Cypress
+  - sudo apt-get install -y xvfb
+  - sudo apt-get install -y libgbm-dev
+  - Start e2e testing on server folder `npm run test`
 - Start dev server on client folder `npm run dev`
 - Browse [home](https://localhost:8090)
+- server .env
+  - DATABASE_URL=postgresql://postgres:password@localhost:5432/postgres
+- client .env
+  - NEXT_PUBLIC_API=https://localhost:8091/api
 
 #### Postgres Database
 

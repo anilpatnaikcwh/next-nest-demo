@@ -34,6 +34,18 @@ describe("Products API", () => {
     });
   });
 
+  it("Create Product Unsuccess", () => {
+    cy.request({
+      method: "POST",
+      url: "/product",
+      body: {}
+    }).then(response => {
+      expect(response.status).to.eq(201);
+      expect(response.body.success).equals(false);
+      expect(response.body.resource).is.not.null;
+    });
+  });
+
   it("Create Product Success", () => {
     cy.request({
       method: "POST",
@@ -53,7 +65,35 @@ describe("Products API", () => {
       url: `/products/${id}`
     }).then(response => {
       expect(response.status).to.eq(200);
-      expect(response.body).to.have.property("name", mockProduct.name);
+      expect(response.body.success).equals(true);
+      expect(response.body.resource.name).equals(product.name);
+    });
+  });
+
+  it("Update Product By ID", () => {
+    const updatedProduct = {
+      ...mockProduct,
+      id,
+      name: faker.commerce.productName()
+    };
+    cy.request({
+      method: "PUT",
+      url: "/product",
+      body: updatedProduct
+    }).then(response => {
+      expect(response.status).to.eq(200);
+      expect(response.body.success).equals(true);
+      expect(response.body.resource.id).not.null;
+    });
+  });
+
+  it("Delete Product By ID", () => {
+    cy.request({
+      method: "DELETE",
+      url: `/products/${id}`
+    }).then(response => {
+      expect(response.status).to.eq(200);
+      expect(response.body.success).equals(true);
     });
   });
 });
