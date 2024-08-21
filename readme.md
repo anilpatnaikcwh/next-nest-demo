@@ -29,3 +29,7 @@
   - `sudo apt-get install -y xvfb`
   - `sudo apt-get install -y libgbm-dev`
 - Start Cypress e2e `npm run test`
+
+#### Cloud Shell 
+- [Web Preview URL](https://<port>-<project-id>.<region>.cloudshell.dev)
+- [Default Port URL](https://8080-<project-id>.<region>.cloudshell.dev)
