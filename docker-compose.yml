@@ -15,8 +15,8 @@ services:
     environment:
       PGADMIN_DEFAULT_EMAIL: admin@domain.com
       PGADMIN_DEFAULT_PASSWORD: password
-      PGADMIN_LISTEN_PORT: 8092
+      PGADMIN_LISTEN_PORT: 8085
     ports:
-      - 8092:8092
+      - 8085:8085
     depends_on:
       - postgres

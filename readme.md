@@ -1,42 +1,31 @@
-#### Local Setup
-
-- Create postgres and pgadmin on root folder `docker-compose up -d`
-- Browse [pgadmin](http://localhost:8092) and login with `admin@domain.com ~ password`
-- Create database schema on server folder `npx prisma db push`
-- Seed database on server folder `npx prisma db seed`
-- Browse database on server folder `npx prisma studio`
-- Start dev server on server folder `npm run dev`
-- Browse [swagger](https://localhost:8091/swagger)
-- Cypress
-  - sudo apt-get install -y xvfb
-  - sudo apt-get install -y libgbm-dev
-  - Start e2e testing on server folder `npm run test`
-- Start dev server on client folder `npm run dev`
-- Browse [home](https://localhost:8090)
-- server .env
-  - DATABASE_URL=postgresql://postgres:password@localhost:5432/postgres
-- client .env
-  - NEXT_PUBLIC_API=https://localhost:8091/api
-
-#### Postgres Database
-
-- Create postgres and pgadmin `docker-compose up -d`
-- Remove postgres and pgadmin `docker-compose down --rmi all -v`
-
-#### Postgres Seed
-
+### Local Dev Setup
+#### Postgres
+- Open terminal then go to **server** directory
+- Create Postgres and pgAdmin `docker-compose up -d`
 - Create database schema `npx prisma db push`
 - Seed database `npx prisma db seed`
-- Create database migrations `npx prisma migrate dev --name init`
 - Browse database `npx prisma studio`
-
-#### Nest Backend
-
-- Start dev server `npm run dev`
-- Build for production `npm run build`
-- Start Cypress e2e `npm run test`
-
+- Browse [pgadmin](http://localhost:8085) 
+  - Login with `admin@domain.com ~ password`
+- Drop Postgres and pgAdmin **post dev** `docker-compose down --rmi all -v`
 #### Next Frontend
-
+- Create .env in **client** directory
+  - NEXT_PUBLIC_API=[url](https://localhost:8080/api)
+- Open new bash terminal then go to **client** directory
+- Install npm dependencies `npm install`
 - Start dev server `npm run dev`
-- Build for production `npm run build`
+- Browse [app](https://localhost:8090)
+#### Nest Backend
+- Create .env in **server** directory
+  - DATABASE_URL=[url](postgresql://postgres:password@localhost:5432/postgres)
+- Copy **certificates** folder from **client** to **server**
+- Open new bash terminal then go to **server** directory 
+- Install npm dependencies `npm install`
+- Start dev server `npm run dev`
+- Browse [swagger](https://localhost:8080/swagger)
+#### Cypress
+- Open new bash terminal then go to **server** directory
+- Create Cypress dev env
+  - `sudo apt-get install -y xvfb`
+  - `sudo apt-get install -y libgbm-dev`
+- Start Cypress e2e `npm run test`

@@ -33,7 +33,7 @@ async function bootstrap() {
     ignoreGlobalPrefix: true,
     include: [LookupModule, ProductModule]
   });
-  if (process.env.NODE_ENV !== "production") SwaggerModule.setup(NavType.Swagger, app, document);
+  SwaggerModule.setup(NavType.Swagger, app, document);
   // #endregion
   await app.listen(constants.API_PORT);
 }

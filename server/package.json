@@ -7,10 +7,9 @@
   "license": "MIT",
   "scripts": {
     "build": "nest build",
-    "dev": "set NODE_ENV=development && nest start --watch",
+    "dev": "nest start --watch",
     "prod": "node dist/main",
-    "test": "cypress run --e2e --headless --quiet",
-    "test:open": "cypress open --e2e --browser chrome"
+    "test": "cypress run --e2e --headless --quiet"    
   },
   "prisma": {
     "seed": "ts-node --compiler-options {\"module\":\"CommonJS\"} prisma/seed.ts"
