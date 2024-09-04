@@ -15,7 +15,7 @@
     "@mui/icons-material": "^5.16.7",
     "@mui/material": "^5.16.7",
     "@mui/material-nextjs": "^5.16.6",
-    "axios": "^1.7.3",
+    "axios": "^1.7.4",
     "date-fns": "^3.6.0",
     "formik": "^2.4.6",
     "next": "14.2.5",
